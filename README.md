@@ -14,4 +14,18 @@ Ao definir funções, é necessário tipar os parametros
             return nome;
         }
 
-        
+o Tipo de dado mapping é semelhante a um objeto javascript, mas onde tambem precisam ser tipados os valores das chaves;
+
+        mapping(string => uint) valorAReceber
+
+A interação com este tipo de dado, é ainda mais semelhante
+
+        function escreveValor(string memory _nome, uint _valor) public{
+                valorAReceber[_nome] = _valor;
+            }
+
+        function recuperaValor(string memory _nome) public view returns(uint){
+            return valorAReceber[_nome];
+        }
+
+Existem 4 niveis de visibilidade: Internal, External, Private, Public;
