@@ -29,3 +29,14 @@ A interação com este tipo de dado, é ainda mais semelhante
         }
 
 Existem 4 niveis de visibilidade: Internal, External, Private, Public;
+
+Recupere o endereço de quem está executando ações do contrato através do tipo Addess e do objeto msg.sender;
+
+        address public owner = msg.sender;
+
+Utilize o require para especificar que o código continuará apenas se atender a requisição
+
+        function escreveValor(string memory _nome, uint _valor) public{
+                require(msg.sender == owner)
+                valorAReceber[_nome] = _valor;
+        }
