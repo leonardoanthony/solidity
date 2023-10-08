@@ -40,3 +40,12 @@ Utilize o require para especificar que o código continuará apenas se atender a
                 require(msg.sender == owner)
                 valorAReceber[_nome] = _valor;
         }
+
+### Aula 6
+
+- A diferença entre o require e o if é que o require não permite a continuidade da execução do código ( transação );
+- Memory X Storage
+        Enquanto o memory armazena dados temporários, storage preocupa-se com os dados permanentes
+        Variáveis de estado são do tipo STORAGE, enquanto varáveis de funções são do tipo memory
+- Variáveis que possuem um tamanho fixo ( int, uint, uint256, address, bool) são do tipo VALOR, enquanto as que não possuem tamanho fixo são do tipo REFERÊNCIA 
+- O "msg" é o objeto global mais importante. E o método "msg.sender" é o método mais importante dele, pois traz informações de quem chamou o contrato.
