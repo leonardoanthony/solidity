@@ -49,3 +49,21 @@ Utilize o require para especificar que o código continuará apenas se atender a
         Variáveis de estado são do tipo STORAGE, enquanto varáveis de funções são do tipo memory
 - Variáveis que possuem um tamanho fixo ( int, uint, uint256, address, bool) são do tipo VALOR, enquanto as que não possuem tamanho fixo são do tipo REFERÊNCIA 
 - O "msg" é o objeto global mais importante. E o método "msg.sender" é o método mais importante dele, pois traz informações de quem chamou o contrato.
+
+### Aula 7 - Struct, Array e Storage
+
+- Struct = Classe
+
+- Para retornar um item da storage ele pode ser clonado em um memory
+
+                function pegaMonstro(uint id) public view returns(string memory, uint){
+                        Monstro memory monstro = monstros[id];
+                        return (monstro.nome, monstro.forca);
+                }
+
+- Para alterar, utilize o storage
+
+                function mudaForca(uint id, uint novaForca) public {
+                        Monstro storage monstro = monstros[id];
+                        monstro.forca = novaForca;
+                }
