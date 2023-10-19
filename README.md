@@ -67,3 +67,37 @@ Utilize o require para especificar que o código continuará apenas se atender a
                         Monstro storage monstro = monstros[id];
                         monstro.forca = novaForca;
                 }
+
+### Aula 8 - Enum, If-Else, Estrutura de um Contrato
+
+- Estrutura geral de um contato
+    - Variáveis de estado;
+    - Funções;
+    - Structures;
+    - Enums;
+    - Erros;
+    - Modifier;
+    - Events;
+    - Constructor;
+
+- Enum = Tipo de dado com opções pré-definidas
+                
+                enum TipoMonstro {
+                        Raro,
+                        Especial,
+                        Normal,
+                        Bacana
+                }
+
+- Não é possível gerar números aleatórios na blockchain, para isso usamos o objeto global "block.timestamp"
+
+                monstro.forca = block.timestamp % 20;
+                // Calculará o resto da divisão entre o block.timestamp por 20
+                // Retorna um numero um numero entre 0 e 19
+
+- Utilize o if-else para gerar lógicas condicionais
+
+                if(block.timestamp % 4 == 0) {novoMonstro.tipo = TipoMonstro.Raro;}
+                else if(block.timestamp % 4 == 1) {novoMonstro.tipo = TipoMonstro.Especial;}
+                else if(block.timestamp % 4 == 2) {novoMonstro.tipo = TipoMonstro.Normal;}
+                else if(block.timestamp % 4 == 3) {novoMonstro.tipo = TipoMonstro.Bacana;}
